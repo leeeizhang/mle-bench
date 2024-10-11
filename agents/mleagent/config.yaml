@@ -1,0 +1,30 @@
+vars:
+  time_limit: &time_limit 86400 # 24 hrs
+
+defaults: &defaults
+  start: mleagent/start.sh
+  dockerfile: mleagent/Dockerfile
+  kwargs_type: argparse
+  env_vars: &env_vars
+    TIME_LIMIT_SECS: *time_limit
+    OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+mleagent:
+  <<: *defaults
+  kwargs:
+    model: gpt-4o-2024-08-06
+
+mleagent/gpt4-o:
+  <<: *defaults
+  kwargs:
+    model: gpt-4o-2024-08-06
+
+mleagent/gpt-4-turbo:
+  <<: *defaults
+  kwargs:
+    model: gpt-4-turbo-2024-04-09
+
+mleagent/o1-preview:
+  <<: *defaults
+  kwargs:
+    model: o1-preview

@@ -8,6 +8,7 @@ dummy | dummy | N/A
 [AIDE](https://www.weco.ai/blog/technical-report) | aide | https://github.com/thesofakillers/aideml
 [MLAgentBench](https://openreview.net/forum?id=1Fs1LvjYQW) | mlagentbench | https://github.com/JunShern/MLAgentBench
 [OpenHands](https://arxiv.org/abs/2407.16741) | opendevin | https://github.com/thesofakillers/OpenHands
+[MLE-Agent](https://github.com/MLSysOps/MLE-agent) | mleagent | https://github.com/MLSysOps/MLE-agent
 
 ## Prerequisites
 If you want to run these agents locally:
