@@ -26,7 +26,7 @@ python -c "import tensorflow as tf; print('GPUs Available: ', tf.config.list_phy
 
 # build mle project
 ln -s ${LOGS_DIR} ${AGENT_DIR}/logs
-ln -s ${CODE_DIR} ${AGENT_DIR}/workspaces
+ln -s ${CODE_DIR} ${AGENT_DIR}/workspace
 ln -s ${SUBMISSION_DIR} ${AGENT_DIR}/submission
 
 mkdir -p ${AGENT_DIR}/workspace/.mle/
@@ -41,11 +41,12 @@ pushd ${AGENT_DIR}/workspace/
 
 # run with timeout, and print if timeout occurs
 timeout $TIME_LIMIT_SECS \
-mle kaggle \
-  --data "/home/data/" \
-  --requirement "/home/data/description.md" \
-  --submission ${AGENT_DIR}/submission \
-  --competition ${COMPETITION_ID} \
+mle kaggle --auto \
+  --datasets "/home/data/train.csv,/home/data/test.csv" \
+  --description "/home/data/description.md" \
+  --submission ${AGENT_DIR}/submission/submission.csv \
+  --sub_example "/home/data/sample_submission.csv" \
+  --comp_id ${COMPETITION_ID} \
   $@ # forward the bash arguments to aide
 if [ $? -eq 124 ]; then
   echo "Timed out after $TIME_LIMIT"

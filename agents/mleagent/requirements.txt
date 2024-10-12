@@ -1,1 +1,1 @@
-git+https://github.com/MLSysOps/MLE-agent@0.4.0
+git+https://github.com/MLSysOps/MLE-agent@18054dc1251cb56cc4345abab7abcc57a5bcd592
