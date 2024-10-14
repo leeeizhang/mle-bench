@@ -42,7 +42,7 @@ pushd ${AGENT_DIR}/workspace/
 # run with timeout, and print if timeout occurs
 timeout $TIME_LIMIT_SECS \
 mle kaggle --auto \
-  --datasets "/home/data/train.csv,/home/data/test.csv" \
+  --datasets "/home/data/" \
   --description "/home/data/description.md" \
   --submission ${AGENT_DIR}/submission/submission.csv \
   --sub_example "/home/data/sample_submission.csv" \
